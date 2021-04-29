@@ -1,0 +1,24 @@
+<!--<div class="form-group " >-->
+<div *ngFor="let input of controlDataItems" class="form-group" [formGroup]="form">
+
+  
+ 
+  <div [ngSwitch]="input.controlType" class="form-inline">
+    <label [attr.for]="input.dynamicFieldId">{{input.fieldLabel}}:</label>
+    <app-textbox-component *ngSwitchCase="'text'" #control [controlData]="input" (sendMessage)="sendMessageToControls($event)"></app-textbox-component>
+    
+
+    <!--<app-dropdown-component #control  *ngSwitchCase="'select'" [controlData] ="input" (sendMessage)="sendMessageToControls($event)"></app-dropdown-component>
+
+
+  <app-radio-component *ngSwitchCase="'radio'" #control [controlData] ="input" (sendMessage)="sendMessageToControls($event)"></app-radio-component>-->
+
+
+  </div><br /><br />
+  <!--<button type="submit" [disabled]="form.invalid" (click)="submitForm()">
+    Submit
+  </button>-->
+</div>
+
+
+<!--</div>-->

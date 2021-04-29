@@ -1,0 +1,22 @@
+<h5 id="tableLabel">This is Summary Page</h5>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="summary">
+  <thead>
+    <tr>
+      <th>Sampling Time</th>
+      <th>Project Name</th>
+      <th>Construction Count</th>
+      <th>Is Construction Completed</th>
+      <th>Length of the road</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of summary">
+      <td>{{ item.samplingTime }}</td>
+      <td>{{ item.projectName }}</td>
+      <td align="center">{{ item.constructionCount }}</td>
+      <td align="center">{{ item.isConstructionCompleted }}</td>
+      <td align="center">{{item.lengthOfTheRoad}}</td>
+    </tr>
+  </tbody>
+</table>

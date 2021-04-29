@@ -1,0 +1,20 @@
+<h5>This is Details Page</h5>
+<div class="form-inline" style="border:5px solid gray;height:350px; margin:0px 20px 20px 20px">
+  <div style="vertical-align:top;border-right:5px solid gray;height:340px">
+    <ul class="details flex-grow">
+      <li *ngFor="let item of data"
+          [class.selected]="item === selected"
+          (click)="onSelect(item)">
+        {{item.samplingTime}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="selected" class="center-div flex-grow" style="height: 300px;">
+      <app-dynamic-form [controlDataItems]="properties"></app-dynamic-form>
+    <br/><br/>
+    <div class="form-group form-inline" style="float: right;">
+      <label></label>
+        <button (click)="updateData(selected)">Save</button>
+    </div>
+  </div>
+</div>
